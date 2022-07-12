@@ -1,6 +1,6 @@
 export const getBrowserLanguage = () => {
   return navigator.language.toLowerCase().indexOf("zh") !== -1
-    ? "zh_CN"
+    ? "zh-CN"
     : "en-US";
 };
 
