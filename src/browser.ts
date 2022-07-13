@@ -4,29 +4,28 @@ export const getBrowserLanguage = () => {
     : "en-US";
 };
 
+
 export const isMobile = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
 };
 
 export const isDesktop = () => {
-  return !isMobile()
+  return !isMobile();
 };
 
-export const isAndroid=()=>{
-  let u = navigator.userAgent;
-  return u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
-}
+export const isAndroid = () => {
+  return /android/.test(navigator.userAgent.toLowerCase());
+};
 
-export const isIOS=()=>{
-  let u = navigator.userAgent;
-  return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);  
-}
+export const isIOS = () => {
+  return /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+};
 
 export const isWeixin = () => {
-  return (
-    // @ts-ignore
-    navigator.userAgent.toLowerCase().match(/MicroMessenger/i) ===
-    "micromessenger"
-  );
+  var ua = navigator.userAgent.toLowerCase();
+  // @ts-ignore
+  return ua.match(/MicroMessenger/i) == "micromessenger";
 };
 

@@ -17,3 +17,10 @@ Util functions for web development.
 - getFilenameByUrl
 - getFileExtByUrl
 - getQueryVariable
+
+## File
+- isImage
+- isH5Video
+- isExcel
+- isWord
+- isPdf
