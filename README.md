@@ -16,3 +16,4 @@ Util functions for web development.
 ## Url
 - getFilenameByUrl
 - getFileExtByUrl
+- getQueryVariable
