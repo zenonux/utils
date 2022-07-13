@@ -1,5 +1,5 @@
 const getBrowserLanguage = () => {
-  return navigator.language.toLowerCase().indexOf("zh") !== -1 ? "zh_CN" : "en-US";
+  return navigator.language.toLowerCase().indexOf("zh") !== -1 ? "zh-CN" : "en-US";
 };
 const isMobile = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -8,15 +8,14 @@ const isDesktop = () => {
   return !isMobile();
 };
 const isAndroid = () => {
-  let u = navigator.userAgent;
-  return u.indexOf("Android") > -1 || u.indexOf("Adr") > -1;
+  return /android/.test(navigator.userAgent.toLowerCase());
 };
 const isIOS = () => {
-  let u = navigator.userAgent;
-  return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  return /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
 };
 const isWeixin = () => {
-  return navigator.userAgent.toLowerCase().match(/MicroMessenger/i) === "micromessenger";
+  var ua = navigator.userAgent.toLowerCase();
+  return ua.match(/MicroMessenger/i) == "micromessenger";
 };
 const toDate = (input) => {
   if (input instanceof Date)
